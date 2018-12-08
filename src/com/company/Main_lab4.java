@@ -5,19 +5,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Main_lab4 {
 
-    private static final String REGEX_PATTERN_STRING = "(.*?)(class|interface)(?<child>.*?)(extends|implements)(\\s)(?<parent>\\w+)(.*?)";
     private static final Map<String, List<String>> indexMap = new HashMap<>();
     private static final List<Thread> tasks = new ArrayList<>();
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile(REGEX_PATTERN_STRING);
-
-        long start = System.nanoTime();
+        Pattern pattern = Pattern.compile(Main.pattern);
 
         try {
             List<String> paths  = Files.find(Paths.get(args[0]),

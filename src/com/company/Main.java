@@ -9,9 +9,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+
 public class Main {
 
-    private static final String pattern = "(.*?)(class)(?<child>.*?)(extends)(\\s)(?<parent>\\w+)(.*?)";
+    static final String pattern = "(.*?)(class)(?<child>.*?)(extends)(\\s)(?<parent>\\w+)(.*?)";
 
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile(Main.pattern);

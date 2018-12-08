@@ -11,12 +11,8 @@ import java.util.stream.Collectors;
 
 public class Main_lab3 {
 
-    private static final String REGEX_PATTERN_STRING = "(.*?)(class)(?<child>.*?)(extends)(\\s)(?<parent>\\w+)(.*?)";
-
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile(REGEX_PATTERN_STRING);
-
-        long start = System.nanoTime();
+        Pattern pattern = Pattern.compile(Main.pattern);
 
         try {
             List<String> paths  = Files.find(Paths.get(args[0]),
